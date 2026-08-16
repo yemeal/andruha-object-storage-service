@@ -8,7 +8,7 @@ This repository is the skeleton for the Andruha Messenger Object Storage Service
 
 Own the media upload and access boundary in future iterations.
 
-It does not own profile, message, authentication, or realtime behavior. Object metadata ownership is intentionally deferred.
+It owns object metadata and the media upload/access boundary. It does not own profile, message, authentication, or realtime behavior.
 
 ## Hexagonal/DDD layer map
 
@@ -54,8 +54,8 @@ docker build --target runtime --tag andruha/object-storage-service:local .
 `.github/workflows/ci.yml` runs lint, strict Pyright, unit and integration
 tests, branch coverage >= 80%, runtime dependency audit, secret scanning, and a
 Docker smoke test. `.github/workflows/release.yml` publishes a verified image
-to GHCR only for a version tag. Business APIs and object-storage adapters
-remain deferred.
+to GHCR only for a version tag. Business APIs, the metadata schema, and
+object-storage adapters remain deferred.
 
 ## Canonical project material
 
